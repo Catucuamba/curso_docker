@@ -1,18 +1,18 @@
 version: "3.9"
 services:
-  chanchito:
+  contenedor_app2:
     build: .
     ports:
       - "3000:3000"
     links:
-      - monguito
-  monguito:
+      - contenedor_base2
+  contenedor_base2:
     image: mongo
     ports:
       - "27017:27017"
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=nico
-      - MONGO_INITDB_ROOT_PASSWORD=password
+      - MONGO_INITDB_ROOT_USERNAME=userF
+      - MONGO_INITDB_ROOT_PASSWORD=passwordF
     volumes:
       - mongo-data:/data/db
       # mysql -> /var/lib/mysql
