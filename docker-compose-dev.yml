@@ -1,16 +1,16 @@
 version: "3.9"
 services:
-  chanchito:
+  contenedor_app_dev:
     build:
       context: .
       dockerfile: Dockerfile.dev
     ports:
       - "3000:3000"
     links:
-      - monguito
+      - contenedor_base_dev
     volumes:
       - .:/home/app
-  monguito:
+  contenedor_base_dev:
     image: mongo
     ports:
       - "27017:27017"
@@ -24,3 +24,4 @@ services:
 
 volumes:
   mongo-data:
+
